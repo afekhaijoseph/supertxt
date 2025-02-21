@@ -83,6 +83,10 @@ textarea:focus-visible {
   .error {
     width: 40%;
   }
+
+  textarea {
+    font-size: 18px;
+  }
 }
 
 @keyframes error-anime {
