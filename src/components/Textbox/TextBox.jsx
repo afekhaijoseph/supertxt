@@ -25,7 +25,6 @@ const ChatBox = ({handleSelection, handleSummarize, text, language, index}) => {
 
   return (
     <div className={styles.chatitem}>
-      <button onClick={handleDelete}>Delete</button>
       <div className={styles.display}>
         <p>{text}</p>
         <p className={styles.originlang}>Language: {language in languages ? languages[language] : language}</p>
