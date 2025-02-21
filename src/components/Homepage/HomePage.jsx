@@ -178,10 +178,7 @@ const HomePage = () => {
         <div className={styles.sendmessagecontainer}>
            <div className={styles.sendmessage}>
            <textarea placeholder="I will detect your texts language, translate and summarize it if it's too long" name="requests" id="requests" onChange={e => setText(e.target.value)} value={text}></textarea>
-           <button className={styles.sendbutton} onClick={handleClick}>
-         <MdOutlineSend  onMouseOver={({target})=>target.style.color="black"}
-          onMouseOut={({target})=>target.style.color="white"}/>
-         </button>
+           <button className={styles.sendbutton} onClick={handleClick}> press</button>
         </div>
         </div>
        
