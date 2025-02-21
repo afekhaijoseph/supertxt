@@ -38,10 +38,11 @@
   display: flex;
   align-items: center;
   width: 100%;
+  margin: auto;
 }
 
 textarea {
-  width: 90%;
+  width: 100%;
   margin: auto;
   border-radius: 18px;
   padding: 15px;
@@ -71,7 +72,7 @@ textarea:focus-visible {
 .sendbutton {
   background-color: transparent;
   border: none;
-  padding: 0 1rem;
+  padding: 0 10px;
 }
 
 .send-icon {
@@ -81,6 +82,11 @@ textarea:focus-visible {
 @media (min-width: 720px) {
   .error {
     width: 40%;
+  }
+
+  .sendmessage {
+    width: 90%;
+    margin: auto;
   }
 
   textarea {

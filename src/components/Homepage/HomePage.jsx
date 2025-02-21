@@ -162,7 +162,7 @@ const HomePage = () => {
 }
     
   return (
-    <IconContext.Provider value={{ color: 'white', size: "25px"}}>
+    <IconContext.Provider value={{ color: 'white', size: "30px"}}>
       <NavBar/>
       {error && <p className={styles.error}>{error}</p>}
       
@@ -177,7 +177,7 @@ const HomePage = () => {
         </div>
         <div className={styles.sendmessagecontainer}>
            <div className={styles.sendmessage}>
-           <textarea placeholder="I will detect your texts language, translate and summarize it if it's too long" name="requests" id="requests" onChange={e => setText(e.target.value)} value={text}></textarea>
+           <textarea placeholder="language detector, translator and summarizer" name="requests" id="requests" onChange={e => setText(e.target.value)} value={text}></textarea>
            <button className={styles.sendbutton} onClick={handleClick}>
            <MdOutlineSend  onMouseOver={({target})=>target.style.color="black"}
             onMouseOut={({target})=>target.style.color="white"}/>
