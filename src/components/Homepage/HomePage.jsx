@@ -102,7 +102,6 @@ const HomePage = () => {
 
     
     const detectLanguage = async (text) => {
-      console.log(text);
         if ('ai' in self && 'languageDetector' in self.ai) {
             const languageDetectorCapabilities = await self.ai.languageDetector.capabilities();
             languageDetectorCapabilities.languageAvailable('es');

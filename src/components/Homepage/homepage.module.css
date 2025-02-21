@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 80%;
+  width: 90%;
   margin: auto;
   text-align: left;
   margin-bottom: 6rem;
@@ -80,6 +80,9 @@ textarea:focus-visible {
 }
 
 @media (min-width: 720px) {
+  .chat {
+    width: 80%;
+  }
   .error {
     width: 40%;
   }
