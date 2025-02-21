@@ -5,6 +5,10 @@
   width: 80%;
   margin: auto;
   text-align: left;
+  margin-bottom: 6rem;
+}
+
+.chat-container {
 }
 .error {
   color: #ffffff;
@@ -46,6 +50,7 @@ textarea {
   background: rgb(99, 98, 98);
   color: #ffffff;
   resize: none;
+  font-size: 18px;
 }
 
 textarea::placeholder {
