@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Summarizer Extension",
+    "version": "1.0",
+    "description": "Summarizes content using Google's AI Summarizer API.",
+    "permissions": ["activeTab", "scripting"],
+    "host_permissions": ["*://*/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "index.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://*/*"],
+        "js": ["contentScript.js"]
+      }
+    ]
+  }
+
+  

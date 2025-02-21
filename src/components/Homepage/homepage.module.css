@@ -1,0 +1,95 @@
+.chat {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 80%;
+  margin: auto;
+  text-align: left;
+}
+.error {
+  color: #ffffff;
+  background: rgb(240, 93, 105);
+  padding: 1rem;
+  position: fixed;
+  width: 60%;
+  z-index: 100;
+  border: 2px solid red;
+  border-radius: 10px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: error-anime 2s;
+  animation-fill-mode: fowards;
+  text-align: center;
+  padding: 5px;
+  font-size: 13px;
+}
+.sendmessagecontainer {
+  position: fixed;
+  bottom: 0px;
+  padding: 10px 5px;
+  width: 100%;
+  margin: auto;
+  background: rgb(99, 98, 98);
+}
+
+.sendmessage {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+  margin: auto;
+  border-radius: 18px;
+  padding: 15px;
+  background: rgb(99, 98, 98);
+  color: #ffffff;
+  resize: none;
+}
+
+textarea::placeholder {
+  color: #cac8c8;
+  opacity: 0.6;
+}
+
+textarea:focus-visible {
+  outline: none;
+}
+
+.changecolor {
+  color: #ffffff;
+}
+
+.changeColor:hover {
+  color: #000000;
+}
+
+.sendbutton {
+  background-color: transparent;
+  border: none;
+}
+
+.send-icon {
+  padding: 1rem;
+}
+
+@media (min-width: 720px) {
+  .error {
+    width: 40%;
+  }
+}
+
+@keyframes error-anime {
+  0 {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
