@@ -68,7 +68,6 @@ const HomePage = () => {
 
     const handleSummarize = async (text) => {
         if (!('ai' in self) || !('summarizer' in self.ai)) {
-          console.error('Summarizer API is not available.');
           return;
         }
       
