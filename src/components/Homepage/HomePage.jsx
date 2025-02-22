@@ -81,9 +81,6 @@ const HomePage = () => {
   const handleClick = async () => {
     if (!text) return;
 
-    console.log("Button clicked!");
-    alert("Button clicked!"); // Debugging for iPhone
-
     const detectedLanguage = await detectLanguage(text);
     console.log("Detected language:", detectedLanguage);
 
