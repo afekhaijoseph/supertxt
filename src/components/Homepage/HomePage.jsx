@@ -82,8 +82,6 @@ const HomePage = () => {
     if (!text) return;
 
     const detectedLanguage = await detectLanguage(text);
-    console.log("Detected language:", detectedLanguage);
-
     if (!detectedLanguage || !detectedLanguage.detectedLanguage) {
       setParagraphs((prev) => [...prev, { text, language: "Couldn't detect!" }]);
     } else {
