@@ -176,8 +176,7 @@ const HomePage = () => {
         <div className={styles.sendmessagecontainer}>
            <div className={styles.sendmessage}>
            <textarea placeholder="language detector, translator and summarizer" name="requests" id="requests" onChange={e => setText(e.target.value)} value={text}></textarea>
-           <button onClick={() => alert("Clicked!")}>Send</button>
-           <button className={styles.sendbutton} onTouchStart={() => alert("Touched!")} onClick={handleClick}>
+           <button className={styles.sendbutton} onTouchStart={handleClick}>
              <MdOutlineSend  onMouseOver={({target})=>target.style.color="black"}
             onMouseOut={({target})=>target.style.color="white"}/>
            </button>
