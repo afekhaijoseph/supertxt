@@ -140,6 +140,7 @@ const HomePage = () => {
     
 
     const handleClick = async () =>{
+      alert('clicked');
         if (!text.trim()){
             return
         }
