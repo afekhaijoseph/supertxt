@@ -48,7 +48,6 @@ const HomePage = () => {
     
                 } 
                 else if (canTranslate === 'after-download'){
-                    console.log("Creating detector with monitor.");
                     const translator = await self.ai.translator.create({
                         sourceLanguage: source,
                         targetLanguage: target,
@@ -79,7 +78,6 @@ const HomePage = () => {
         };
       
         const available = (await self.ai.summarizer.capabilities()).available;
-        console.log('Summarizer availability:', available);
         if (available === 'no') {
           return;
         }
@@ -140,8 +138,7 @@ const HomePage = () => {
     
 
     const handleClick = async () =>{
-      alert('clicked');
-        if (!text.trim()){
+        if (!text){
             return
         }
         const detectedLanguage = await detectLanguage(text); 
