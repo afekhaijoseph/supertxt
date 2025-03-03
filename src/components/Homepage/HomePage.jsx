@@ -101,11 +101,11 @@ const HomePage = () => {
 
 
     const detectedLanguage = await detectLanguage(text);
+    console.log(detectedLanguage)
     if (!detectedLanguage) {
+      setParagraphs((prev) => [...prev, { text, language: "Couldn't detect!" }]);
       setError("Error detecting this language");
       setTimeout(() => setError(""), 2000);
-      console.log(paragraphs)
-      
     } else if (detectedLanguage.confidence < 0.6){
       setParagraphs((prev) => [...prev, { text, language: "Couldn't detect!" }]);
     }
