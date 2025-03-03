@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { MdOutlineSend } from "react-icons/md";
 import { IconContext } from "react-icons";
 import styles from "./homepage.module.css";
@@ -25,22 +25,31 @@ const HomePage = () => {
 
           const result = await translator.translate(text);
           const detectedLanguage = await detectLanguage(result);
-
           setParagraphs((prev) =>
             prev.map((oldPara, i) =>
               i === index ? { ...oldPara, text: result, language: detectedLanguage.detectedLanguage } : oldPara
             )
           );
         }
-      } catch (e) {
+      } catch {
         setError("This text couldn't be translated");
         setTimeout(() => setError(""), 2000);
       }
     }
+
+    else {
+      setError("This text couldn't be translated");
+      setTimeout(() => setError(""), 2000);
+    }
   };
 
   const handleSummarize = async (text) => {
-    if (!("ai" in self) || !("summarizer" in self.ai)) return;
+    if (!("ai" in self) || !("summarizer" in self.ai)){
+      setError("This text couldn't be summarizerised");
+      setTimeout(() => setError(""), 2000);
+      return;
+    }
+      
 
     const options = {
       sharedContext: "This is a scientific article",
@@ -50,7 +59,11 @@ const HomePage = () => {
     };
 
     const available = (await self.ai.summarizer.capabilities()).available;
-    if (available === "no") return;
+    if (available === "no"){
+      setError("The summarizer isn't available");
+      setTimeout(() => setError(""), 2000);
+      return;
+    } 
 
     const summarizer = await self.ai.summarizer.create(options);
     if (available === "after-download") {
@@ -67,13 +80,18 @@ const HomePage = () => {
     if ("ai" in self && "languageDetector" in self.ai) {
       try {
         const languageDetectorCapabilities = await self.ai.languageDetector.capabilities();
-        if (languageDetectorCapabilities.capabilities === "no") return;
+        if (languageDetectorCapabilities.capabilities === "no") {
+          setError("Language detection is unavailable");
+          setTimeout(() => setError(""), 2000);
+        }
 
         const detector = await self.ai.languageDetector.create();
         const results = await detector.detect(text);
         return results.length > 0 ? results[0] : null;
-      } catch (e) {
-        return null;
+      } catch {
+        setError("The language couldn't be detected");
+        setTimeout(() => setError(""), 2000);
+        return ;
       }
     }
   };
@@ -81,10 +99,17 @@ const HomePage = () => {
   const handleClick = async () => {
     if (!text) return;
 
+
     const detectedLanguage = await detectLanguage(text);
-    if (!detectedLanguage || !detectedLanguage.detectedLanguage) {
+    if (!detectedLanguage) {
+      setError("Error detecting this language");
+      setTimeout(() => setError(""), 2000);
+      console.log(paragraphs)
+      
+    } else if (detectedLanguage.confidence < 0.6){
       setParagraphs((prev) => [...prev, { text, language: "Couldn't detect!" }]);
-    } else {
+    }
+    else{
       setParagraphs((prev) => [...prev, { text, language: detectedLanguage.detectedLanguage }]);
     }
 

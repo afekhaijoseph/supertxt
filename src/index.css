@@ -9,6 +9,7 @@ body {
   background-attachment: fixed;
   background-position: cover;
   background-size: 100% 100%;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   font-family: "Roboto", serif;
@@ -22,6 +23,6 @@ body {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
+    background-repeat: no-repeat;
   }
 }
