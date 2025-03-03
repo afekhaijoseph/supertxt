@@ -10,12 +10,12 @@
 
 .error {
   color: #ffffff;
-  background: rgb(240, 93, 105);
+  background: rgb(167, 54, 64);
   padding: 1rem;
   position: fixed;
   width: max-content;
   z-index: 100;
-  border: 2px solid red;
+  border: 2px solid rgb(167, 54, 64);
   border-radius: 12px;
   left: 50%;
   transform: translate(-50%, -50%);
